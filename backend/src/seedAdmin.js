@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const run = async () => {
-  await mongoose.connect(process.env.DB_URL);
+  await mongoose.connect(process.env.MONGODB_URL); 
 
   const hashedPassword = await bcrypt.hash("jul123", 10);
 

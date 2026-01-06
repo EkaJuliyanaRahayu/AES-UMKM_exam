@@ -1,12 +1,12 @@
 // Buat file test-hook.js di backend
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import Order from './src/models/Order.js';
+import Order from './src/models/order.js';
 
 dotenv.config();
 // test-hook.js - versi sederhana
 async function testHook() {
-  await mongoose.connect(process.env.DB_URL);
+ await mongoose.connect(process.env.MONGODB_URL); 
   
   console.log("🧪 Testing hook...");
   
