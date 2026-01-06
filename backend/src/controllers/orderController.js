@@ -1,7 +1,4 @@
-// ⚠️ HAPUS import ini dulu (sementara untuk testing):
-// import { encryptData, decryptData } from '../middlewares/encryption.js'; //
-// 📁 backend/src/controllers/orderController.js
-// 📁 backend/src/controllers/orderController.js
+
 import mongoose from "mongoose";
 import Order from "../models/order.js";
 import CryptoJS from "crypto-js";
