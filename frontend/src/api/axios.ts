@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, // TS sudah ngerti tipe dari env.d.ts
+  baseURL: `${import.meta.env.VITE_API_URL}/api`, // tambahkan /api
 });
 
 // otomatis masukin token
