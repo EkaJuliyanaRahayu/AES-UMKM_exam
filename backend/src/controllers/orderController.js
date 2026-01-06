@@ -7,10 +7,7 @@ import Order from "../models/order.js";
 import CryptoJS from "crypto-js";
 
 // ⚠️ HAPUS CACHE MODEL (ES Modules style)
-if (mongoose.connection.models['Order']) {
-  delete mongoose.connection.models['Order'];
-  console.log("🔄 Cleared Order model cache");
-}
+console.log("✅ Order controller loaded");
 
 // ✅ HARCODE KEY (sama dengan di Order.js)
 const ENCRYPTION_KEY = "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef";
