@@ -27,7 +27,7 @@ const App = () => {
   useEffect(() => {
     console.log("MENGAMBIL DATA KE BACKEND...");
 
-    api.get("/products")
+   api.get("/api/products") 
       .then((res) => {
         console.log("DATA PRODUCTS DARI BACKEND:", res.data);
       })

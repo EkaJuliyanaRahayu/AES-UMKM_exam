@@ -11,7 +11,7 @@ const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   const fetchProducts = async () => {
-    const res = await api.get("/products");
+   const res = await api.get("/api/products");  
     setProducts(res.data);
   };
 
