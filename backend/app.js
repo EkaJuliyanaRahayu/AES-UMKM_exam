@@ -44,6 +44,12 @@ app.get('/', (req, res) => {
   res.send('API UMKM Kue Rumahan berjalan 🚀');
 });
 
+// 🔥 Endpoint wajib untuk Railway Health Check
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Backend running on http://localhost:${PORT}`);
