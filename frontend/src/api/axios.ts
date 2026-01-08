@@ -1,11 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-<<<<<<< HEAD
-  baseURL: `${import.meta.env.VITE_API_URL}/api`, // tambahkan /api
-=======
-  baseURL: `${import.meta.env.VITE_API_URL}`, // tambahkan /api
->>>>>>> f1c4e7b ( update now)
+  baseURL: `${import.meta.env.VITE_API_URL}`, // https://aes-umkmexam-production.up.railway.app/api
 });
 
 // otomatis masukin token
