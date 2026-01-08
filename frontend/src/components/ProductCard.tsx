@@ -27,7 +27,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="aspect-square relative overflow-hidden bg-muted">
         {product.image ? (
           <img
-           src={`http://localhost:5000${product.image}`}
+           src={`https://aes-umkmexam-production.up.railway.app${product.image}`}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             onError={(e) => {

@@ -131,7 +131,7 @@ export default function ProductDetailPage() {
             <div className="aspect-square rounded-2xl overflow-hidden bg-muted shadow-card">
               {product.image ? (
                 <img
-                 src={`http://localhost:5000${product.image}`}
+                 src={`https://aes-umkmexam-production.up.railway.app${product.image}`}
                   alt={product.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   onError={(e) => {

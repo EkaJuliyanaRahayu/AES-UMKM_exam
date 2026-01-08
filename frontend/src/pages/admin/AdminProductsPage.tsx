@@ -279,7 +279,7 @@ export default function AdminProductsPage() {
                           <img
                               src={
                                 product.image?.startsWith("/uploads")
-                                  ? `http://localhost:5000${product.image}`
+                                  ? `https://aes-umkmexam-production.up.railway.app${product.image}`
                                   : product.image || "/placeholder.svg"
                               }
                               alt={product.name}
