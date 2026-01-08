@@ -10,6 +10,7 @@ import { toast } from '@/hooks/use-toast';
 export default function ProductDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const IMAGE_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -131,7 +132,7 @@ export default function ProductDetailPage() {
             <div className="aspect-square rounded-2xl overflow-hidden bg-muted shadow-card">
               {product.image ? (
                 <img
-                 src={`https://aes-umkmexam-production.up.railway.app${product.image}`}
+                 src={product.image?.startsWith('/uploads') ? `${IMAGE_BASE}${product.image}` : product.image}
                   alt={product.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   onError={(e) => {

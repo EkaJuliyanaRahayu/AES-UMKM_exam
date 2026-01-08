@@ -39,6 +39,8 @@ export default function AdminProductsPage() {
   const [imagePreview, setImagePreview] = useState<string>(''); // ← TAMBAH INI
   const [isLoading, setIsLoading] = useState(false);
 
+  const IMAGE_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+
   const loadProducts = async () => {
     setIsLoading(true);
     try {
@@ -279,7 +281,7 @@ export default function AdminProductsPage() {
                           <img
                               src={
                                 product.image?.startsWith("/uploads")
-                                  ? `https://aes-umkmexam-production.up.railway.app${product.image}`
+                                  ? `${IMAGE_BASE}${product.image}`
                                   : product.image || "/placeholder.svg"
                               }
                               alt={product.name}

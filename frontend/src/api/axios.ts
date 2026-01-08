@@ -1,8 +1,14 @@
 import axios from "axios";
 
+
+const baseUrl = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 const api = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL}`, // https://aes-umkmexam-production.up.railway.app/api
+  baseURL: `${baseUrl}/api`,
 });
+
+console.log("ENV VALUE:", import.meta.env.VITE_API_URL);
+console.log("BASE URL:", `${baseUrl}/api`);
+
 
 // otomatis masukin token
 api.interceptors.request.use((config) => {
@@ -12,5 +18,6 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
+
 
 export default api;

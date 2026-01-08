@@ -9,6 +9,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const IMAGE_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('id-ID', {
       style: 'currency',
@@ -27,7 +28,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="aspect-square relative overflow-hidden bg-muted">
         {product.image ? (
           <img
-           src={`https://aes-umkmexam-production.up.railway.app${product.image}`}
+           src={product.image?.startsWith('/uploads') ? `${IMAGE_BASE}${product.image}` : product.image}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             onError={(e) => {
